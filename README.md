@@ -25,6 +25,13 @@ Tool to use the Call of Duty API
 		- [Description](#description-2)
 		- [Parameters](#parameters-2)
 		- [Example](#example-2)
+	- [Fetch Call of Duty Black Ops 4 data](#fetch-call-of-duty-black-ops-4-data)
+		- [Name](#name-3)
+		- [Synopsis](#synopsis-3)
+		- [Syntax](#syntax-3)
+		- [Description](#description-3)
+		- [Parameters](#parameters-3)
+		- [Example](#example-3)
 
 # Commands
 
@@ -169,4 +176,43 @@ Proxy                  :
 MaximumRedirection     : -1
 MaximumRetryCount      : 0
 RetryIntervalInSeconds : 0
+```
+
+## Fetch Call of Duty Black Ops 4 data
+
+### Name
+    
+.\fetch_bo4_data.ps1
+
+### Synopsis
+    
+Fetch Call of Duty Black Ops 4 data of a player
+
+### Syntax
+    
+``.\fetch_bo4_data.ps1 [[-UserName] <String>] [[-Platform] <String>] [[-Session] <Object>] [<CommonParameters>]``
+
+
+### Description
+    
+Fetch Call of Duty Black Ops 4 data of a player and output json, can fail if the user doesn't allow the share of his stats with the other
+
+### Parameters
+
+*   ``-UserName <String>``
+    The username of the player
+
+*   ``-Platform <String> = "xbl", "battle", "steam", "psn"``
+    The platform of the user
+
+*   ``-Session <Object>``
+    The session to connect, null to generate a new one
+
+### Example
+
+```powershell
+PS>.\fetch_bo4_data.ps1 -UserName ATE48 -Platform xbl
+Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/mp/ to output_account/xbl_ATE48_mp.json...
+Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/blackout/ to output_account/xbl_ATE48_blackout.json...
+Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/zombies/ to output_account/xbl_ATE48_zombies.json...
 ```

@@ -1,3 +1,22 @@
+<#
+.SYNOPSIS
+	Fetch Call of Duty Black Ops 4 data of a player
+.DESCRIPTION
+	Fetch Call of Duty Black Ops 4 data of a player and output json, can fail if the user doesn't allow the share of his stats with the other
+.EXAMPLE
+	PS> .\fetch_bo4_data.ps1 -UserName ATE48 -Platform xbl
+	Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/mp/ to output_account/xbl_ATE48_mp.json...
+	Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/blackout/ to output_account/xbl_ATE48_blackout.json...
+	Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/zombies/ to output_account/xbl_ATE48_zombies.json...
+
+
+.PARAMETER UserName
+	The username of the player
+.PARAMETER Platform
+	The platform of the user
+.PARAMETER Session
+	The session to connect, null to generate a new one
+#>
 param(
 	[string]
 	$UserName,
