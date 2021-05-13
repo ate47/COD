@@ -84,9 +84,14 @@ if (!$loginResponse.success) {
 	return $null
 }
 
+$loginResponseData = [PSCustomObject]@{
+	"login_response" = $loginResponse
+	"device_id" = $deviceId
+}
+
 if ($ReturnLoginInformation) {
-	return $loginResponse
+	return $loginResponseData
 } else {
 	Write-Host "Writing login tokens into '$SaveFile'"
-	$loginResponse | ConvertTo-Json | Out-File $SaveFile -Encoding utf8
+	$loginResponseData | ConvertTo-Json | Out-File $SaveFile -Encoding utf8
 }
