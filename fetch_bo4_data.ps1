@@ -26,6 +26,7 @@ param(
 	$Session
 )
 
+$title = "bo4"
 $Modes = @(
 	"mp", "blackout", "zombies"
 )
@@ -39,11 +40,11 @@ if ($null -eq $Session) {
 	}
 }
 
-New-Item -ItemType Directory output_account -Force > $null
+New-Item -ItemType Directory "output_account/$title" -Force > $null
 
 foreach ($Mode in $Modes) {
-	$name = "output_account/$($Platform)_$($Username)_$Mode.json"
-	$uri = "https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/$Platform/gamer/$UserName/profile/type/$Mode/"
+	$name = "output_account/$title/$($Platform)_$($Username)_$Mode.json"
+	$uri = "https://my.callofduty.com/api/papi-client/crm/cod/v2/title/$title/platform/$Platform/gamer/$UserName/profile/type/$Mode/"
 	Write-Host "Saving data $uri to $name..."
 	$json = (Invoke-WebRequest -Uri $uri -WebSession $Session).Content | ConvertFrom-Json -Depth 8
 	$json | ConvertTo-Json -Depth 8 | Out-File -Encoding utf8 $name > $null

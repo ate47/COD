@@ -3,6 +3,11 @@ Tool to use the Call of Duty API
 
 **Table of contents**
 
+- [Basic usage](#basic-usage)
+	- [Get account data into Json](#get-account-data-into-json)
+		- [Connect with the Activision account](#connect-with-the-activision-account)
+		- [Fetch the data](#fetch-the-data)
+		- [Find the data](#find-the-data)
 - [Commands](#commands)
 	- [Fetch Prestige/Level icons](#fetch-prestigelevel-icons)
 		- [Name](#name)
@@ -46,6 +51,75 @@ Tool to use the Call of Duty API
 		- [Description](#description-5)
 		- [Parameters](#parameters-5)
 		- [Example](#example-5)
+
+# Basic usage
+
+## Get account data into Json
+
+To access all the data about an account you need the username, the plateform, an Activision account (can be another account) and that the account allowes viewing stats by the other account.
+
+### Connect with the Activision account
+
+Login to the Activision servers using this command:
+
+```Powershell
+PS> .\cod_login.ps1
+```
+
+It will prompt you the credentials of the Activision account, if everything is ok, a ``login_data.json`` file will be created.
+
+### Fetch the data
+
+Choose the script to use the data, here for the game Call Of Duty: Black Ops 4, fetch_bo4_data.ps1.
+
+Use this command to get the account data:
+
+```Powershell
+PS> .\fetch_bo4_data.ps1 -UserName MyUsername -Platform MyPlatform
+```
+
+The parameters are:
+
+* ``MyUsername`` The username of the account, for example mine is ATE48
+* ``MyPlatform`` The username of the account, for example mine is xbl, you can choose between:
+  * ``xbl``  - Xbox Live
+  * ``battle`` - BattleNet
+  * ``steam`` - Steam (Not working with BO4)
+  * ``psn`` - PlayStation Network
+
+My command for my account is for example
+
+```Powershell
+PS> .\fetch_bo4_data.ps1 -UserName ATE48 -Platform xbl
+```
+
+### Find the data
+
+The json files are in the directory ``output_account/<game>/<plateform>_<username>_<mode>.json``
+
+For BO4 you can get some information like:
+* All the modes
+  * data.mp.level - the current level (between 1 and 55)
+  * data.mp.paragonRank - the current master prestige level (between 56 and 1000)
+  * data.mp.prestige - the current prestige
+* (mp.json)
+  * data.mp.lifetime.all.wlRatio - Win/Lose ratio
+  * data.mp.lifetime.all.ekiadRatio - EKIA/Death ratio
+  * data.mp.lifetime.all.kdRatio - Kill/Death ratio
+  * data.mp.lifetime.all.statsMultikillMoreThan7 - Number of kill chains (1 = dark ops)
+  * data.mp.lifetime.all.killstreak30NoScorestreaks - Number of nukes in FFA (1 = dark ops)
+* (blackout.json)
+  * data.mp.lifetime.all.winsWithoutKills - Wins without kill (1 = challenge)
+  * data.mp.lifetime.all.topXPlacementPlayer - Number of top X alone (X can be 5, 10 or 25)
+  * data.mp.lifetime.all.topXPlacementTeam - Number of top X in team (X can be 5, 10 or 25)
+  * data.mp.lifetime.all.basketsMade - Baskets made using the Basketball (1 = dark ops)
+  * data.mp.lifetime.itemData.misc.basketball.kills - Kills made using the Basketball (lmao)
+* (zombies.json)
+  * data.mp.lifetime.all.highestRoundReached - Max round
+  * data.mp.lifetime.all.bgbsChewed - Elixirs drunk  (100 = challenge)
+  * data.mp.lifetime.all.talismanUsed - Talisman used (50 = challenge)
+  * data.mp.lifetime.all.deaths - Number of death
+  * data.mp.lifetime.all.kills - Number of kills (1M = Dark ops)
 
 # Commands
 
@@ -263,7 +337,7 @@ Fetch game items icon from JSON data
 ### Example
 
 ```powershell
-PS >.\fetch_items_icons.ps1  -OutputAccountPath ".\output_account\*_ATE48_*"
+PS >.\fetch_items_icons.ps1  -OutputAccountPath ".\output_account\bo4\*_ATE48_*"
 Downloading https://www.callofduty.com/cdn/app/icons/bo4/combatrecord/eq_acid_bomb.png into output_icons/bo4/items/equipment/eq_acid_bomb.png...
 ```
 
@@ -299,7 +373,7 @@ Fetch game items icon from JSON data
 ### Example
 
 ```powershell
-PS >.\fetch_maps_icons.ps1  -OutputAccountPath ".\output_account\*_ATE48_*"
+PS >.\fetch_maps_icons.ps1  -OutputAccountPath ".\output_account\bo4\*_ATE48_*"
 Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_casino.jpg into output_icons/bo4/mp_casino.jpg...
 Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_elevation.jpg into output_icons/bo4/mp_elevation.jpg...
 Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_firingrange2.jpg into output_icons/bo4/mp_firingrange2.jpg...

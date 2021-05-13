@@ -4,7 +4,7 @@
 .DESCRIPTION
 	Fetch game items icon from JSON data
 .EXAMPLE
-PS > .\fetch_items_icons.ps1  -OutputAccountPath ".\output_account\*_ATE48_*"
+PS > .\fetch_items_icons.ps1  -OutputAccountPath ".\output_account\bo4\*_ATE48_*"
 Downloading https://www.callofduty.com/cdn/app/icons/bo4/combatrecord/eq_acid_bomb.png into output_icons/bo4/items/equipment/eq_acid_bomb.png...
 ...
 .PARAMETER ExportPath
