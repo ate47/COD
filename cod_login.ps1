@@ -1,10 +1,34 @@
+<#
+.SYNOPSIS
+	Login to the Activision API
+.DESCRIPTION
+	Login to the Activision API and return login data into a file or in the pipeline
+.EXAMPLE
+	PS> $pass = Read-Host -AsSecureString
+	******************
+	PS> .\cod_login.ps1 -Username "mymail@example.org" -Password $pass
+	Register DEVICE_ID '****'...
+	Login...
+	Writing login tokens into 'login_data.json'
+.PARAMETER Username
+	The email/username to connect to your Activision account
+.PARAMETER Password
+	A [SecureString] of your password to connect
+.PARAMETER SaveFile
+	By default "login_data.json", where the login data are saved, useless if the -ReturnLoginInformation is set
+.PARAMETER ReturnLoginInformation
+	Return the login information into the pipeline
+
+#>
 param(
 	[string]
 	$Username,
 	[SecureString]
 	$Password,
 	[string]
-	$SaveFile = "login_data.json"
+	$SaveFile = "login_data.json",
+	[switch]
+	$ReturnLoginInformation
 )
 
 $links = @{
@@ -57,8 +81,12 @@ $loginResponse = ((Invoke-WebRequest -Uri ($links.ssoLogin) -WebSession $CodSess
 
 if (!$loginResponse.success) {
 	Write-Host "Bad username or password"
-	Exit -1
+	return $null
 }
 
-Write-Host "Writing login tokens into '$SaveFile'"
-$loginResponse | ConvertTo-Json | Out-File $SaveFile -Encoding utf8
+if ($ReturnLoginInformation) {
+	return $loginResponse
+} else {
+	Write-Host "Writing login tokens into '$SaveFile'"
+	$loginResponse | ConvertTo-Json | Out-File $SaveFile -Encoding utf8
+}

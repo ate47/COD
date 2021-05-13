@@ -11,6 +11,13 @@ Tool to use the Call of Duty API
 		- [Description](#description)
 		- [Parameters](#parameters)
 		- [Example](#example)
+	- [Login to an Activision account](#login-to-an-activision-account)
+		- [Name](#name-1)
+		- [Synopsis](#synopsis-1)
+		- [Syntax](#syntax-1)
+		- [Description](#description-1)
+		- [Parameters](#parameters-1)
+		- [Example](#example-1)
 
 # Commands
 
@@ -63,3 +70,50 @@ Export the CoD Prestige/Level icons from the CDN
 ```powershell
 PS > .\fetch_icons.ps1 -AllGames
 ```
+
+## Login to an Activision account
+
+### Name
+
+.\cod_login.ps1
+
+### Synopsis
+
+Login to the Activision API
+
+### Syntax
+
+``.\cod_login.ps1 [[-Username] <String>] [[-Password] <SecureString>] [[-SaveFile] <String>] [-ReturnLoginInformation] [<CommonParameters>]``
+
+
+### Description
+
+Login to the Activision API and return login data into a file or in the pipeline
+
+
+### Parameters
+
+*   ``-Username <String>``
+    The email/username to connect to your Activision account
+
+*   ``-Password <SecureString>``
+    A ``SecureString`` of your password to connect
+
+*   ``-SaveFile <String>``
+    By default "login_data.json", where the login data are saved, useless if the -ReturnLoginInformation is set
+
+*   ``-ReturnLoginInformation``
+    Return the login information into the pipeline
+
+### Example
+
+```powershell
+PS> $pass = Read-Host -AsSecureString
+******************
+PS> .\cod_login.ps1 -Username "mymail@example.org" -Password $pass
+Register DEVICE_ID '****'...
+Login...
+Writing login tokens into 'login_data.json'
+```
+
+
