@@ -18,6 +18,13 @@ Tool to use the Call of Duty API
 		- [Description](#description-1)
 		- [Parameters](#parameters-1)
 		- [Example](#example-1)
+	- [Build WebSession for InvokeWeb-Request](#build-websession-for-invokeweb-request)
+		- [Name](#name-2)
+		- [Synopsis](#synopsis-2)
+		- [Syntax](#syntax-2)
+		- [Description](#description-2)
+		- [Parameters](#parameters-2)
+		- [Example](#example-2)
 
 # Commands
 
@@ -116,4 +123,50 @@ Login...
 Writing login tokens into 'login_data.json'
 ```
 
+## Build WebSession for InvokeWeb-Request
 
+### Name
+
+.\build_sso_websession.ps1
+
+### Synopsis
+
+Build a session from the cod_login.ps1 output
+
+
+### Syntax
+    
+``.\build_sso_websession.ps1 [[-loginData] <Object>] [[-SaveFile] <String>] [[-CookieDomain] <String>] [<CommonParameters>]``
+
+
+### Description
+
+Build a session from the cod_login.ps1 output
+
+### Parameters
+
+*   ``-loginData <Object>``
+    Login data object, returned by cod_login.ps1 using the -ReturnLoginInformation switch
+
+*   ``-SaveFile <String>``
+    Login save file, returned by default by cod_login.ps1 without using the -ReturnLoginInformation switch
+
+*   ``-CookieDomain <String>``
+    The domain to match the cookies of the WebSession
+
+### Example
+
+```powershell
+PS> # cod_login.ps1 was already executed and a login_data.json file exists
+PS> .\build_sso_websession.ps1
+Headers                : {[Authorization, bearer ****], [X_COD_DEVICE_ID, ****]}
+Cookies                : System.Net.CookieContainer
+UseDefaultCredentials  : False
+Credentials            :
+Certificates           :
+UserAgent              : cod-ate-worker
+Proxy                  :
+MaximumRedirection     : -1
+MaximumRetryCount      : 0
+RetryIntervalInSeconds : 0
+```

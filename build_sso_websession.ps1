@@ -1,3 +1,29 @@
+<#
+.SYNOPSIS
+	Build a session from the cod_login.ps1 output
+.DESCRIPTION
+	Build a session from the cod_login.ps1 output
+.EXAMPLE
+	PS> .\build_sso_websession.ps1
+	Headers                : {[Authorization, bearer ****], [X_COD_DEVICE_ID, ****]}
+	Cookies                : System.Net.CookieContainer
+	UseDefaultCredentials  : False
+	Credentials            :
+	Certificates           :
+	UserAgent              : cod-ate-worker
+	Proxy                  :
+	MaximumRedirection     : -1
+	MaximumRetryCount      : 0
+	RetryIntervalInSeconds : 0
+
+
+.PARAMETER loginData
+	Login data object, returned by cod_login.ps1 using the -ReturnLoginInformation switch
+.PARAMETER SaveFile
+	Login save file, returned by default by cod_login.ps1 without using the -ReturnLoginInformation switch
+.PARAMETER CookieDomain
+	The domain to match the cookies of the WebSession
+#>
 param(
 	$loginData,
 	[string]
