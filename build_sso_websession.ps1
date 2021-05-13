@@ -1,7 +1,9 @@
 param(
 	$loginData,
 	[string]
-	$SaveFile = "login_data.json"
+	$SaveFile = "login_data.json",
+	[string]
+	$CookieDomain = "profile.callofduty.com"
 )
 
 if ($null -eq $loginData) {
@@ -29,7 +31,6 @@ $authHeader = $loginData.auth_header
 $deviceId = $loginData.device_id
 
 $UserArgent = "cod-ate-worker"
-$CookieDomain = "profile.callofduty.com"
 
 $CodSession = [Microsoft.PowerShell.Commands.WebRequestSession]::new()
 $CodSession.Headers.Add("Authorization", "bearer $authHeader")
