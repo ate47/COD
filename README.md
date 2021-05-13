@@ -32,6 +32,20 @@ Tool to use the Call of Duty API
 		- [Description](#description-3)
 		- [Parameters](#parameters-3)
 		- [Example](#example-3)
+	- [Fetch items icons from json data](#fetch-items-icons-from-json-data)
+		- [Name](#name-4)
+		- [Synopsis](#synopsis-4)
+		- [Syntax](#syntax-4)
+		- [Description](#description-4)
+		- [Parameters](#parameters-4)
+		- [Example](#example-4)
+	- [Fetch items maps from json data](#fetch-items-maps-from-json-data)
+		- [Name](#name-5)
+		- [Synopsis](#synopsis-5)
+		- [Syntax](#syntax-5)
+		- [Description](#description-5)
+		- [Parameters](#parameters-5)
+		- [Example](#example-5)
 
 # Commands
 
@@ -215,4 +229,79 @@ PS>.\fetch_bo4_data.ps1 -UserName ATE48 -Platform xbl
 Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/mp/ to output_account/xbl_ATE48_mp.json...
 Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/blackout/ to output_account/xbl_ATE48_blackout.json...
 Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/zombies/ to output_account/xbl_ATE48_zombies.json...
+```
+
+## Fetch items icons from json data
+
+### Name 
+
+.\fetch_items_icons.ps1
+
+### Synopsis
+
+Fetch game items icon from JSON data
+
+
+### Syntax
+
+``.\fetch_items_icons.ps1 [-OutputAccountPath] <String[]> [-ExportPath <String>] [<CommonParameters>]``
+
+
+### Description
+
+Fetch game items icon from JSON data
+
+
+### Parameters
+
+*   ``-OutputAccountPath <String[]>``
+    The json files
+
+*   ``-ExportPath <String>``
+    The path where to save the icons
+
+### Example
+
+```powershell
+PS >.\fetch_items_icons.ps1  -OutputAccountPath ".\output_account\*_ATE48_*"
+Downloading https://www.callofduty.com/cdn/app/icons/bo4/combatrecord/eq_acid_bomb.png into output_icons/bo4/items/equipment/eq_acid_bomb.png...
+```
+
+## Fetch items maps from json data
+
+### Name 
+
+.\fetch_maps_icons.ps1
+
+### Synopsis
+
+Fetch game maps icon from JSON data
+
+
+### Syntax
+
+``.\fetch_maps_icons.ps1 [-OutputAccountPath] <String[]> [-ExportPath <String>] [<CommonParameters>]``
+
+
+### Description
+
+Fetch game items icon from JSON data
+
+
+### Parameters
+
+*   ``-OutputAccountPath <String[]>``
+    The json files
+
+*   ``-ExportPath <String>``
+    The path where to save the icons
+
+### Example
+
+```powershell
+PS >.\fetch_maps_icons.ps1  -OutputAccountPath ".\output_account\*_ATE48_*"
+Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_casino.jpg into output_icons/bo4/mp_casino.jpg...
+Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_elevation.jpg into output_icons/bo4/mp_elevation.jpg...
+Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_firingrange2.jpg into output_icons/bo4/mp_firingrange2.jpg...
+Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_frenetic.jpg into output_icons/bo4/mp_frenetic.jpg...
 ```
