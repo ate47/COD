@@ -38,7 +38,7 @@ $links = @{
 }
 
 $deviceId = New-Guid
-$userArgent = New-Guid
+$userArgent = "cod-ate-worker"
 
 if ($null -eq $Username -or "" -eq $Username) {
 	$Username = Read-Host "Username"
@@ -86,6 +86,7 @@ if (!$loginResponse.success) {
 
 $loginResponseData = [PSCustomObject]@{
 	"login_response" = $loginResponse
+	"auth_header" = $authHeader
 	"device_id" = $deviceId
 }
 
