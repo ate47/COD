@@ -32,8 +32,8 @@ param(
 )
 
 $links = @{
-	"sso" = "https://profile.callofduty.com/cod/mapp/"
-	"ssoLogin" = "https://profile.callofduty.com/cod/mapp/login"
+	"sso"               = "https://profile.callofduty.com/cod/mapp/"
+	"ssoLogin"          = "https://profile.callofduty.com/cod/mapp/login"
 	"ssoRegisterDevice" = "https://profile.callofduty.com/cod/mapp/registerDevice"
 }
 
@@ -52,6 +52,10 @@ $PlainPW = $Password | ConvertFrom-SecureString -AsPlainText
 Write-Host "Register DEVICE_ID '$deviceId'..."
 
 $CodSession = [Microsoft.PowerShell.Commands.WebRequestSession]::new()
+$CodSession.Cookies.Add([System.Net.Cookie]::new("XSRF-TOKEN", "68e8b62e-1d9d-4ce1-b93f-cbe5ff31a041", "/", "profile.callofduty.com"))
+$CodSession.Cookies.Add([System.Net.Cookie]::new("country", "US", "/", "profile.callofduty.com"))
+$CodSession.Cookies.Add([System.Net.Cookie]::new("ACT_SSO_LOCALE", "US", "/", "profile.callofduty.com"))
+$CodSession.Cookies.Add([System.Net.Cookie]::new("new_SiteId", "cod", "/", "profile.callofduty.com"))
 
 $dataDevice = [PSCustomObject]@{
 	"deviceId" = $deviceId
@@ -59,40 +63,47 @@ $dataDevice = [PSCustomObject]@{
 
 $registerDeviceResponse = ((Invoke-WebRequest -Uri ($links.ssoRegisterDevice) -WebSession $CodSession -ContentType "application/json" -Method Post -Body $dataDevice).Content | ConvertFrom-Json)
 
+if ("success" -ne ($registerDeviceResponse.status)) {
+	Write-Host "Can't register device: $(registerDeviceResponse.status)" -ForegroundColor Red
+	return $false
+}
+
 $authHeader = $registerDeviceResponse.data.authHeader
 
 $CodSession = [Microsoft.PowerShell.Commands.WebRequestSession]::new()
-$CodSession.Headers.Add("Authorization", "bearer $authHeader")
+$CodSession.Headers.Add("Authorization", "Bearer $authHeader")
 $CodSession.Headers.Add("X_COD_DEVICE_ID", $deviceId)
 $CodSession.Cookies.Add([System.Net.Cookie]::new("XSRF-TOKEN", "68e8b62e-1d9d-4ce1-b93f-cbe5ff31a041", "/", "profile.callofduty.com"))
-$CodSession.Cookies.Add([System.Net.Cookie]::new("API_CSRF_TOKEN"," 68e8b62e-1d9d-4ce1-b93f-cbe5ff31a041", "/", "profile.callofduty.com"))
+$CodSession.Cookies.Add([System.Net.Cookie]::new("API_CSRF_TOKEN", " 68e8b62e-1d9d-4ce1-b93f-cbe5ff31a041", "/", "profile.callofduty.com"))
+$CodSession.Cookies.Add([System.Net.Cookie]::new("country", "US", "/", "profile.callofduty.com"))
+$CodSession.Cookies.Add([System.Net.Cookie]::new("ACT_SSO_LOCALE", "US", "/", "profile.callofduty.com"))
+$CodSession.Cookies.Add([System.Net.Cookie]::new("new_SiteId", "cod", "/", "profile.callofduty.com"))
 $CodSession.UserAgent = $userArgent
-# $CodSession.Headers.Add("x-requested-with", $userAgent)
 
 Write-Host "Login..."
 
 $dataLogin = [PSCustomObject]@{
-	"email" = $Username
+	"email"    = $Username
 	"password" = $PlainPW
 } | ConvertTo-Json
 
 $loginResponse = ((Invoke-WebRequest -Uri ($links.ssoLogin) -WebSession $CodSession -ContentType "application/json" -Method Post -Body $dataLogin).Content | ConvertFrom-Json)
 
-
 if (!$loginResponse.success) {
-	Write-Host "Bad username or password"
+	Write-Host "Can't connect: $($loginResponse.token)"
 	return $null
 }
 
 $loginResponseData = [PSCustomObject]@{
 	"login_response" = $loginResponse
-	"auth_header" = $authHeader
-	"device_id" = $deviceId
+	"auth_header"    = $authHeader
+	"device_id"      = $deviceId
 }
 
 if ($ReturnLoginInformation) {
 	return $loginResponseData
-} else {
+}
+else {
 	Write-Host "Writing login tokens into '$SaveFile'"
 	$loginResponseData | ConvertTo-Json | Out-File $SaveFile -Encoding utf8
 }
