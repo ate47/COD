@@ -23,10 +23,11 @@ param(
 	[ValidateSet("xbl", "battle", "steam", "psn")]
 	[string]
 	$Platform,
+	[ValidateSet("bo4", "bo3", "cw", "mw", "iw", "ww2")]
+	$title = "bo4",
 	$Session
 )
 
-$title = "bo4"
 $Modes = @(
 	"mp", "blackout", "zombies"
 )
