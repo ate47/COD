@@ -1,4 +1,5 @@
 # Call of Duty tools <!-- omit in toc -->
+
 Tool to use the Call of Duty API
 
 **Table of contents**
@@ -30,7 +31,7 @@ Tool to use the Call of Duty API
 		- [Description](#description-2)
 		- [Parameters](#parameters-2)
 		- [Example](#example-2)
-	- [Fetch Call of Duty Black Ops 4 data](#fetch-call-of-duty-black-ops-4-data)
+	- [Fetch Call of Duty stats](#fetch-call-of-duty-stats)
 		- [Name](#name-3)
 		- [Synopsis](#synopsis-3)
 		- [Syntax](#syntax-3)
@@ -66,60 +67,61 @@ Login to the Activision servers using this command:
 PS> .\cod_login.ps1
 ```
 
-It will prompt you the credentials of the Activision account, if everything is ok, a ``login_data.json`` file will be created.
+It will prompt you the credentials of the Activision account, if everything is ok, a `login_data.json` file will be created.
 
 ### Fetch the data
 
-Choose the script to use the data, here for the game Call Of Duty: Black Ops 4, fetch_bo4_data.ps1.
+Choose the script to use the data, here for the game Call Of Duty: Black Ops 4, .\fetch_game_data.ps1.
 
 Use this command to get the account data:
 
 ```Powershell
-PS> .\fetch_bo4_data.ps1 -UserName MyUsername -Platform MyPlatform
+PS> .\fetch_game_data.ps1 -UserName MyUsername -Platform MyPlatform
 ```
 
 The parameters are:
 
-* ``MyUsername`` The username of the account, for example mine is ATE48
-* ``MyPlatform`` The username of the account, for example mine is xbl, you can choose between:
-  * ``xbl``  - Xbox Live
-  * ``battle`` - BattleNet
-  * ``steam`` - Steam (Not working with BO4)
-  * ``psn`` - PlayStation Network
+- `MyUsername` The username of the account, for example mine is ATE48
+- `MyPlatform` The username of the account, for example mine is xbl, you can choose between:
+  - `xbl` - Xbox Live
+  - `battle` - BattleNet
+  - `steam` - Steam (Not working with BO4)
+  - `psn` - PlayStation Network
 
 My command for my account is for example
 
 ```Powershell
-PS> .\fetch_bo4_data.ps1 -UserName ATE48 -Platform xbl
+PS> .\fetch_game_data.ps1 -UserName ATE48 -Platform xbl
 ```
 
 ### Find the data
 
-The json files are in the directory ``output_account/<game>/<plateform>_<username>_<mode>.json``
+The json files are in the directory `output_account/<game>/<plateform>_<username>_<mode>.json`
 
 For BO4 you can get some information like:
-* All the modes
-  * data.mp.level - the current level (between 1 and 55)
-  * data.mp.paragonRank - the current master prestige level (between 56 and 1000)
-  * data.mp.prestige - the current prestige
-* (mp.json)
-  * data.mp.lifetime.all.wlRatio - Win/Lose ratio
-  * data.mp.lifetime.all.ekiadRatio - EKIA/Death ratio
-  * data.mp.lifetime.all.kdRatio - Kill/Death ratio
-  * data.mp.lifetime.all.statsMultikillMoreThan7 - Number of kill chains (1 = dark ops)
-  * data.mp.lifetime.all.killstreak30NoScorestreaks - Number of nukes in FFA (1 = dark ops)
-* (blackout.json)
-  * data.mp.lifetime.all.winsWithoutKills - Wins without kill (1 = challenge)
-  * data.mp.lifetime.all.topXPlacementPlayer - Number of top X alone (X can be 5, 10 or 25)
-  * data.mp.lifetime.all.topXPlacementTeam - Number of top X in team (X can be 5, 10 or 25)
-  * data.mp.lifetime.all.basketsMade - Baskets made using the Basketball (1 = dark ops)
-  * data.mp.lifetime.itemData.misc.basketball.kills - Kills made using the Basketball (lmao)
-* (zombies.json)
-  * data.mp.lifetime.all.highestRoundReached - Max round
-  * data.mp.lifetime.all.bgbsChewed - Elixirs drunk  (100 = challenge)
-  * data.mp.lifetime.all.talismanUsed - Talisman used (50 = challenge)
-  * data.mp.lifetime.all.deaths - Number of death
-  * data.mp.lifetime.all.kills - Number of kills (1M = Dark ops)
+
+- All the modes
+  - data.mp.level - the current level (between 1 and 55)
+  - data.mp.paragonRank - the current master prestige level (between 56 and 1000)
+  - data.mp.prestige - the current prestige
+- (mp.json)
+  - data.mp.lifetime.all.wlRatio - Win/Lose ratio
+  - data.mp.lifetime.all.ekiadRatio - EKIA/Death ratio
+  - data.mp.lifetime.all.kdRatio - Kill/Death ratio
+  - data.mp.lifetime.all.statsMultikillMoreThan7 - Number of kill chains (1 = dark ops)
+  - data.mp.lifetime.all.killstreak30NoScorestreaks - Number of nukes in FFA (1 = dark ops)
+- (blackout.json)
+  - data.mp.lifetime.all.winsWithoutKills - Wins without kill (1 = challenge)
+  - data.mp.lifetime.all.topXPlacementPlayer - Number of top X alone (X can be 5, 10 or 25)
+  - data.mp.lifetime.all.topXPlacementTeam - Number of top X in team (X can be 5, 10 or 25)
+  - data.mp.lifetime.all.basketsMade - Baskets made using the Basketball (1 = dark ops)
+  - data.mp.lifetime.itemData.misc.basketball.kills - Kills made using the Basketball (lmao)
+- (zombies.json)
+  - data.mp.lifetime.all.highestRoundReached - Max round
+  - data.mp.lifetime.all.bgbsChewed - Elixirs drunk (100 = challenge)
+  - data.mp.lifetime.all.talismanUsed - Talisman used (50 = challenge)
+  - data.mp.lifetime.all.deaths - Number of death
+  - data.mp.lifetime.all.kills - Number of kills (1M = Dark ops)
 
 # Commands
 
@@ -135,7 +137,7 @@ Export icons from the CDN
 
 ### Syntax
 
-``.\fetch_icons.ps1 [[-ExportPath] <String>] [-CwIcons] [-MwIcons] [-Bo4Icons] [-WwiiIcons] [-OnlyPrestiges] [-AllGames] [-LittleIcons] [<CommonParameters>]``
+`.\fetch_icons.ps1 [[-ExportPath] <String>] [-CwIcons] [-MwIcons] [-Bo4Icons] [-WwiiIcons] [-OnlyPrestiges] [-AllGames] [-LittleIcons] [<CommonParameters>]`
 
 ### Description
 
@@ -143,29 +145,29 @@ Export the CoD Prestige/Level icons from the CDN
 
 ### Parameters
 
-*	``-ExportPath <String>``
-	The path where to save the icons
+- `-ExportPath <String>`
+  The path where to save the icons
 
-*	``-CwIcons``
-	Download Black ops Cold War icons, included in AllGames
+- `-CwIcons`
+  Download Black ops Cold War icons, included in AllGames
 
-*	``-MwIcons`` 
-	Download Modern Warfare 2019 icons, included in AllGames
+- `-MwIcons`
+  Download Modern Warfare 2019 icons, included in AllGames
 
-*	``-Bo4Icons``
-	Download Black ops 4 icons, included in AllGames
+- `-Bo4Icons`
+  Download Black ops 4 icons, included in AllGames
 
-*	``-WwiiIcons``
-	Download World War II icons, included in AllGames
+- `-WwiiIcons`
+  Download World War II icons, included in AllGames
 
-*	``-OnlyPrestiges``
-	Only download the prestige icons
+- `-OnlyPrestiges`
+  Only download the prestige icons
 
-*	``-AllGames``
-	Download all the icons from each games
+- `-AllGames`
+  Download all the icons from each games
 
-*	``-LittleIcons``
-	Download non large icons (if available)
+- `-LittleIcons`
+  Download non large icons (if available)
 
 ### Example
 
@@ -185,27 +187,25 @@ Login to the Activision API
 
 ### Syntax
 
-``.\cod_login.ps1 [[-Username] <String>] [[-Password] <SecureString>] [[-SaveFile] <String>] [-ReturnLoginInformation] [<CommonParameters>]``
-
+`.\cod_login.ps1 [[-Username] <String>] [[-Password] <SecureString>] [[-SaveFile] <String>] [-ReturnLoginInformation] [<CommonParameters>]`
 
 ### Description
 
 Login to the Activision API and return login data into a file or in the pipeline
 
-
 ### Parameters
 
-*   ``-Username <String>``
-    The email/username to connect to your Activision account
+- `-Username <String>`
+  The email/username to connect to your Activision account
 
-*   ``-Password <SecureString>``
-    A ``SecureString`` of your password to connect
+- `-Password <SecureString>`
+  A `SecureString` of your password to connect
 
-*   ``-SaveFile <String>``
-    By default "login_data.json", where the login data are saved, useless if the -ReturnLoginInformation is set
+- `-SaveFile <String>`
+  By default "login_data.json", where the login data are saved, useless if the -ReturnLoginInformation is set
 
-*   ``-ReturnLoginInformation``
-    Return the login information into the pipeline
+- `-ReturnLoginInformation`
+  Return the login information into the pipeline
 
 ### Example
 
@@ -228,11 +228,9 @@ Writing login tokens into 'login_data.json'
 
 Build a session from the cod_login.ps1 output
 
-
 ### Syntax
-    
-``.\build_sso_websession.ps1 [[-loginData] <Object>] [[-SaveFile] <String>] [[-CookieDomain] <String>] [<CommonParameters>]``
 
+`.\build_sso_websession.ps1 [[-loginData] <Object>] [[-SaveFile] <String>] [[-CookieDomain] <String>] [<CommonParameters>]`
 
 ### Description
 
@@ -240,14 +238,14 @@ Build a session from the cod_login.ps1 output
 
 ### Parameters
 
-*   ``-loginData <Object>``
-    Login data object, returned by cod_login.ps1 using the -ReturnLoginInformation switch
+- `-loginData <Object>`
+  Login data object, returned by cod_login.ps1 using the -ReturnLoginInformation switch
 
-*   ``-SaveFile <String>``
-    Login save file, returned by default by cod_login.ps1 without using the -ReturnLoginInformation switch
+- `-SaveFile <String>`
+  Login save file, returned by default by cod_login.ps1 without using the -ReturnLoginInformation switch
 
-*   ``-CookieDomain <String>``
-    The domain to match the cookies of the WebSession
+- `-CookieDomain <String>`
+  The domain to match the cookies of the WebSession
 
 ### Example
 
@@ -266,40 +264,42 @@ MaximumRetryCount      : 0
 RetryIntervalInSeconds : 0
 ```
 
-## Fetch Call of Duty Black Ops 4 data
+## Fetch Call of Duty stats
 
 ### Name
-    
-.\fetch_bo4_data.ps1
+
+.\fetch_game_data.ps1
 
 ### Synopsis
-    
-Fetch Call of Duty Black Ops 4 data of a player
+
+Fetch Call of Duty stats of a player
 
 ### Syntax
-    
-``.\fetch_bo4_data.ps1 [[-UserName] <String>] [[-Platform] <String>] [[-Session] <Object>] [<CommonParameters>]``
 
+`.\fetch_game_data.ps1 [[-UserName] <String>] [[-Platform] <String>] [[-Session] <Object>] [<CommonParameters>]`
 
 ### Description
-    
-Fetch Call of Duty Black Ops 4 data of a player and output json, can fail if the user doesn't allow the share of his stats with the other
+
+Fetch Call of Duty stats of a player and output json, can fail if the user doesn't allow the share of his stats with the other
 
 ### Parameters
 
-*   ``-UserName <String>``
-    The username of the player
+- `-UserName <String>`
+  The username of the player
 
-*   ``-Platform <String> = "xbl", "battle", "steam", "psn"``
-    The platform of the user
+- `-Platform <String> = "xbl", "battle", "steam", "psn"`
+  The platform of the user
 
-*   ``-Session <Object>``
-    The session to connect, null to generate a new one
+- `-Title <String> = "bo4", "bo3", "cw", "mw", "iw", "ww2"`
+  The title to fetch, by default Cold War (cw)
+
+- `-Session <Object>`
+  The session to connect, null to generate a new one
 
 ### Example
 
 ```powershell
-PS>.\fetch_bo4_data.ps1 -UserName ATE48 -Platform xbl
+PS>.\fetch_game_data.ps1 -UserName ATE48 -Platform xbl -Title bo4
 Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/mp/ to output_account/xbl_ATE48_mp.json...
 Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/blackout/ to output_account/xbl_ATE48_blackout.json...
 Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/zombies/ to output_account/xbl_ATE48_zombies.json...
@@ -307,7 +307,7 @@ Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platf
 
 ## Fetch items icons from json data
 
-### Name 
+### Name
 
 .\fetch_items_icons.ps1
 
@@ -315,24 +315,21 @@ Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platf
 
 Fetch game items icon from JSON data
 
-
 ### Syntax
 
-``.\fetch_items_icons.ps1 [-OutputAccountPath] <String[]> [-ExportPath <String>] [<CommonParameters>]``
-
+`.\fetch_items_icons.ps1 [-OutputAccountPath] <String[]> [-ExportPath <String>] [<CommonParameters>]`
 
 ### Description
 
 Fetch game items icon from JSON data
 
-
 ### Parameters
 
-*   ``-OutputAccountPath <String[]>``
-    The json files
+- `-OutputAccountPath <String[]>`
+  The json files
 
-*   ``-ExportPath <String>``
-    The path where to save the icons
+- `-ExportPath <String>`
+  The path where to save the icons
 
 ### Example
 
@@ -343,7 +340,7 @@ Downloading https://www.callofduty.com/cdn/app/icons/bo4/combatrecord/eq_acid_bo
 
 ## Fetch items maps from json data
 
-### Name 
+### Name
 
 .\fetch_maps_icons.ps1
 
@@ -351,24 +348,21 @@ Downloading https://www.callofduty.com/cdn/app/icons/bo4/combatrecord/eq_acid_bo
 
 Fetch game maps icon from JSON data
 
-
 ### Syntax
 
-``.\fetch_maps_icons.ps1 [-OutputAccountPath] <String[]> [-ExportPath <String>] [<CommonParameters>]``
-
+`.\fetch_maps_icons.ps1 [-OutputAccountPath] <String[]> [-ExportPath <String>] [<CommonParameters>]`
 
 ### Description
 
 Fetch game items icon from JSON data
 
-
 ### Parameters
 
-*   ``-OutputAccountPath <String[]>``
-    The json files
+- `-OutputAccountPath <String[]>`
+  The json files
 
-*   ``-ExportPath <String>``
-    The path where to save the icons
+- `-ExportPath <String>`
+  The path where to save the icons
 
 ### Example
 

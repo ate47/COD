@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS
-	Fetch Call of Duty Black Ops 4 data of a player
+	Fetch Call of Duty stats of a player
 .DESCRIPTION
-	Fetch Call of Duty Black Ops 4 data of a player and output json, can fail if the user doesn't allow the share of his stats with the other
+	Fetch Call of Duty stats of a player and output json, can fail if the user doesn't allow the share of his stats with the other
 .EXAMPLE
 	PS> .\fetch_bo4_data.ps1 -UserName ATE48 -Platform xbl
 	Saving data https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/ATE48/profile/type/mp/ to output_account/xbl_ATE48_mp.json...
@@ -24,7 +24,7 @@ param(
 	[string]
 	$Platform,
 	[ValidateSet("bo4", "bo3", "cw", "mw", "iw", "ww2")]
-	$title = "bo4",
+	$title = "cw",
 	$Session
 )
 
