@@ -37,7 +37,6 @@ $links = @{
 	"ssoRegisterDevice" = "https://profile.callofduty.com/cod/mapp/registerDevice"
 }
 
-$deviceId = New-Guid
 $userArgent = "cod-ate-worker"
 
 if ($null -eq $Username -or "" -eq $Username) {
@@ -49,26 +48,14 @@ if ($null -eq $Password) {
 
 $PlainPW = $Password | ConvertFrom-SecureString -AsPlainText
 
-Write-Host "Register DEVICE_ID '$deviceId'..."
+$deviceData = (.\fetch_auth_header.ps1)
 
-$CodSession = [Microsoft.PowerShell.Commands.WebRequestSession]::new()
-$CodSession.Cookies.Add([System.Net.Cookie]::new("XSRF-TOKEN", "68e8b62e-1d9d-4ce1-b93f-cbe5ff31a041", "/", "profile.callofduty.com"))
-$CodSession.Cookies.Add([System.Net.Cookie]::new("country", "US", "/", "profile.callofduty.com"))
-$CodSession.Cookies.Add([System.Net.Cookie]::new("ACT_SSO_LOCALE", "US", "/", "profile.callofduty.com"))
-$CodSession.Cookies.Add([System.Net.Cookie]::new("new_SiteId", "cod", "/", "profile.callofduty.com"))
-
-$dataDevice = [PSCustomObject]@{
-	"deviceId" = $deviceId
-} | ConvertTo-Json
-
-$registerDeviceResponse = ((Invoke-WebRequest -Uri ($links.ssoRegisterDevice) -WebSession $CodSession -ContentType "application/json" -Method Post -Body $dataDevice).Content | ConvertFrom-Json)
-
-if ("success" -ne ($registerDeviceResponse.status)) {
-	Write-Host "Can't register device: $(registerDeviceResponse.status)" -ForegroundColor Red
-	return $false
+if ($null -eq $deviceData) {
+	return $null
 }
 
-$authHeader = $registerDeviceResponse.data.authHeader
+$deviceId = $deviceData.deviceId
+$authHeader = $deviceData.authHeader
 
 $CodSession = [Microsoft.PowerShell.Commands.WebRequestSession]::new()
 $CodSession.Headers.Add("Authorization", "Bearer $authHeader")
