@@ -52,6 +52,11 @@ Tool to use the Call of Duty API
 		- [Description](#description-5)
 		- [Parameters](#parameters-5)
 		- [Example](#example-5)
+	- [Fetch map icons (Fast)](#fetch-map-icons-fast)
+		- [Name](#name-6)
+		- [Synopsis](#synopsis-6)
+		- [Syntax](#syntax-6)
+		- [Description](#description-6)
 
 # Basic usage
 
@@ -373,3 +378,21 @@ Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_elevation.jpg in
 Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_firingrange2.jpg into output_icons/bo4/mp_firingrange2.jpg...
 Downloading https://www.callofduty.com/cdn/app/base-maps/bo4/mp_frenetic.jpg into output_icons/bo4/mp_frenetic.jpg...
 ```
+
+## Fetch map icons (Fast)
+
+### Name
+
+`.\download_maps_icons.ps1`
+
+### Synopsis
+
+Download all the maps icon from the CDN
+
+### Syntax
+
+`.\download_maps_icons.ps1 [[-Title] <Object>] [[-ExportPath] <String>] [-PrintNames] [<CommonParameters>]`
+
+### Description
+
+Download all the maps icon from the CDN
