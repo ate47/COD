@@ -44,7 +44,7 @@ param(
 	$LittleIcons
 )
 
-$Indexes =  @()
+$Indexes = @()
 
 function Add-Index {
 	param (
@@ -54,9 +54,9 @@ function Add-Index {
 		$Largeable = $true
 	)
 	$script:Indexes += @{
-		"Uri" = $Uri
-		"Id" = $Id
-		"MaxLvl" = $MaxLvl
+		"Uri"       = $Uri
+		"Id"        = $Id
+		"MaxLvl"    = $MaxLvl
 		"Largeable" = $Largeable
 	}
 }
@@ -108,12 +108,17 @@ foreach ($i in $Indexes) {
 	$Id = $i.Id
 	$MaxLevel = $i.MaxLvl
 	
-	$Size = !$LittleIcons -and $i.Largable ? "_large" : ""
+	if (!$LittleIcons -and $i.Largeable) {
+		$Size = "_large"
+	}
+	else {
+		$Size = ""
+	}
 	New-Item -ItemType Directory "$ExportPath/$Id" -Force > $null
 
 	for ($Lvl = 1; $Lvl -le $MaxLevel; $Lvl++) {
 		$url = "https://www.callofduty.com/cdn/app/icons/{0}{1:d2}{2}.png" -f ($Uri, $Lvl, $Size)
-		$file = "$ExportPath/$Id/$Lvl.png"
+		$file = "$ExportPath/$Id/$Lvl$Size.png"
 		Write-Host "Downloading $url into $file..."
 		Invoke-WebRequest -Uri $url -OutFile $file > $null
 	}
