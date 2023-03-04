@@ -2,15 +2,15 @@
 
 - [API calls](#api-calls)
   - [Parameters](#parameters)
-    - [`{{platform}}`](#platform)
-    - [`{{title}}`](#title)
-    - [`{{username}}`](#username)
-    - [`{{unoId}}`](#unoid)
-    - [`{{locale}}`](#locale)
-    - [`{{item}}`](#item)
-    - [`{{slot}}`](#slot)
-    - [`{{preference}}`](#preference)
-    - [`{{gameMode}}`](#gamemode)
+    - [platform](#platform)
+    - [title](#title)
+    - [username](#username)
+    - [unoId](#unoid)
+    - [locale](#locale)
+    - [item](#item)
+    - [slot](#slot)
+    - [preference](#preference)
+    - [gameMode](#gamemode)
 
 
 # API calls
@@ -21,7 +21,7 @@ You can find the extracted URLs from the COD companion app in the [apicall.csv](
 
 In the API calls, you can find different parameters.
 
-### `{{platform}}`
+### platform
 
 Platform of the user
 
@@ -33,7 +33,7 @@ Platform of the user
 - `steam`: Steam
 - `uno`: Activision
 
-### `{{title}}`
+### title
 
 Game title
 
@@ -49,43 +49,43 @@ Game title
 - `ww2`: Call of Duty: World War 2
 
 
-### `{{username}}`
+### username
 
 Username/identifier of the user
 
 **Value**: Your username, with the `#` for uno/battle
 
-### `{{unoId}}`
+### unoId
 
 Uno ID of an user
 
 **Value**: Uno ID
 
-### `{{locale}}`
+### locale
 
 The asked locale, aka the language/dialect
 
 **Value**: example: `en` for English, `fr` for French, etc.
 
-### `{{item}}`
+### item
 
 Show item
 
 **Value**: item
 
-### `{{slot}}`
+### slot
 
 Loadout slot id
 
 **Value**: slot id
 
-### `{{preference}}`
+### preference
 
 Loadout preference id
 
 **Value**: preference id
 
-### `{{gameMode}}` 
+### gameMode
 
 Depends on the previous path parameter
 
