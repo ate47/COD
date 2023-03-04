@@ -148,17 +148,7 @@ https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_4
 https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_5.jpg
 ```
 
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_1.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_2.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_3.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_4.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_5.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_6.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_1.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_2.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_3.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_4.jpg" width="200" alt="Career image" />
-<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_5.jpg" width="200" alt="Career image" />
+<img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_1.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_2.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_3.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_4.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_5.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/cw/battle_pass_billboard_6.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_1.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_2.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_3.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_4.jpg" width="200" alt="Career image" /> <img src="https://my.callofduty.com/cdn/app/banners/battle_pass/vg/battle_pass_billboard_5.jpg" width="200" alt="Career image" />
 
 
 ## Ranks
@@ -180,11 +170,7 @@ https://www.callofduty.com/cdn/app/icons/bo4/prestige/zm/ui_icon_zm_prestige_11_
 https://www.callofduty.com/cdn/app/icons/bo4/ranks/wz/ui_icon_rank_wz_level80_large.png
 https://www.callofduty.com/cdn/app/icons/bo4/ranks/zm/ui_icon_rank_zm_level42_large.png
 ```
-<img src="https://www.callofduty.com/cdn/app/icons/bo4/ranks/mp/ui_icon_rank_mp_level55_large.png" width="150" alt="Multiplayer rank 55" />
-<img src="https://www.callofduty.com/cdn/app/icons/bo4/prestige/wz/ui_icon_wz_prestige_08_large.png" width="150" alt="Blackout prestige 8" />
-<img src="https://www.callofduty.com/cdn/app/icons/bo4/prestige/zm/ui_icon_zm_prestige_11_large.png" width="150" alt="Zombies prestige 11" />
-<img src="https://www.callofduty.com/cdn/app/icons/bo4/ranks/wz/ui_icon_rank_wz_level80_large.png" width="150" alt="Blackout level 80" />
-<img src="https://www.callofduty.com/cdn/app/icons/bo4/ranks/zm/ui_icon_rank_zm_level42_large.png" width="150" alt="Zombies level 42" />
+<img src="https://www.callofduty.com/cdn/app/icons/bo4/ranks/mp/ui_icon_rank_mp_level55_large.png" width="150" alt="Multiplayer rank 55" /> <img src="https://www.callofduty.com/cdn/app/icons/bo4/prestige/wz/ui_icon_wz_prestige_08_large.png" width="150" alt="Blackout prestige 8" /> <img src="https://www.callofduty.com/cdn/app/icons/bo4/prestige/zm/ui_icon_zm_prestige_11_large.png" width="150" alt="Zombies prestige 11" /> <img src="https://www.callofduty.com/cdn/app/icons/bo4/ranks/wz/ui_icon_rank_wz_level80_large.png" width="150" alt="Blackout level 80" /> <img src="https://www.callofduty.com/cdn/app/icons/bo4/ranks/zm/ui_icon_rank_zm_level42_large.png" width="150" alt="Zombies level 42" />
 
 ### Modern Warfare 2019
 
@@ -200,11 +186,7 @@ https://www.callofduty.com/cdn/app/icons/mw/officer/mp/icon_rank_officer_20.png
 https://www.callofduty.com/cdn/app/icons/mw/officer/mp/icon_rank_officer_15.png
 https://www.callofduty.com/cdn/app/icons/mw/ranks/mp/icon_rank_03.png
 ```
-<img src="https://www.callofduty.com/cdn/app/icons/mw/officer/mp/icon_rank_officer_01.png" width="150" alt="Office rank 1" />
-<img src="https://www.callofduty.com/cdn/app/icons/mw/ranks/mp/icon_rank_55.png" width="150" alt="Level 55" />
-<img src="https://www.callofduty.com/cdn/app/icons/mw/officer/mp/icon_rank_officer_20.png" width="150" alt="Officer rank 20" />
-<img src="https://www.callofduty.com/cdn/app/icons/mw/officer/mp/icon_rank_officer_15.png" width="150" alt="Officer rank 15" />
-<img src="https://www.callofduty.com/cdn/app/icons/mw/ranks/mp/icon_rank_03.png" width="150" alt="Level 3" />
+<img src="https://www.callofduty.com/cdn/app/icons/mw/officer/mp/icon_rank_officer_01.png" width="150" alt="Office rank 1" /> <img src="https://www.callofduty.com/cdn/app/icons/mw/ranks/mp/icon_rank_55.png" width="150" alt="Level 55" /> <img src="https://www.callofduty.com/cdn/app/icons/mw/officer/mp/icon_rank_officer_20.png" width="150" alt="Officer rank 20" /> <img src="https://www.callofduty.com/cdn/app/icons/mw/officer/mp/icon_rank_officer_15.png" width="150" alt="Officer rank 15" /> <img src="https://www.callofduty.com/cdn/app/icons/mw/ranks/mp/icon_rank_03.png" width="150" alt="Level 3" />
 
 ### Cold War / Vanguard
 
@@ -222,11 +204,7 @@ https://www.callofduty.com/cdn/app/icons/vg/prestige/mp/ui_icon_mp_prestige_01.p
 ```
 
 
-<img src="https://www.callofduty.com/cdn/app/icons/cw/ranks/mp/icon_rank_55.png" width="150" alt="Cold war level 55" />
-<img src="https://www.callofduty.com/cdn/app/icons/cw/prestige/mp/ui_icon_mp_prestige_04.png" width="150" alt="Cold war prestige 4" />
-<img src="https://www.callofduty.com/cdn/app/icons/vg/ranks/mp/icon_rank_55.png" width="150" alt="Vanguard level 55" />
-<img src="https://www.callofduty.com/cdn/app/icons/vg/prestige/mp/ui_icon_mp_prestige_27.png" width="150" alt="Vanguard prestige 27" />
-<img src="https://www.callofduty.com/cdn/app/icons/vg/prestige/mp/ui_icon_mp_prestige_01.png" width="150" alt="Vanguard prestige 1" />
+<img src="https://www.callofduty.com/cdn/app/icons/cw/ranks/mp/icon_rank_55.png" width="150" alt="Cold war level 55" /> <img src="https://www.callofduty.com/cdn/app/icons/cw/prestige/mp/ui_icon_mp_prestige_04.png" width="150" alt="Cold war prestige 4" /> <img src="https://www.callofduty.com/cdn/app/icons/vg/ranks/mp/icon_rank_55.png" width="150" alt="Vanguard level 55" /> <img src="https://www.callofduty.com/cdn/app/icons/vg/prestige/mp/ui_icon_mp_prestige_27.png" width="150" alt="Vanguard prestige 27" /> <img src="https://www.callofduty.com/cdn/app/icons/vg/prestige/mp/ui_icon_mp_prestige_01.png" width="150" alt="Vanguard prestige 1" />
 
 ## Mode images
 
@@ -242,11 +220,7 @@ https://my.callofduty.com/cdn/app/icons/mw/modes/mp_ctf.png
 https://my.callofduty.com/cdn/app/icons/mw/modes/mp_tdm.png
 ```
 
-<img src="https://my.callofduty.com/cdn/app/icons/cw/modes/mp_sas.png" width="150" alt="CW mode sticks and stones" />
-<img src="https://my.callofduty.com/cdn/app/icons/cw/modes/mp_tdm.png" width="150" alt="CW mode tdm" />
-<img src="https://my.callofduty.com/cdn/app/icons/vg/modes/mp_dom.png" width="150" alt="VG mode ffa" />
-<img src="https://my.callofduty.com/cdn/app/icons/mw/modes/mp_ctf.png" width="150" alt="MW mode ctf" />
-<img src="https://my.callofduty.com/cdn/app/icons/mw/modes/mp_tdm.png" width="150" alt="MW mode tdm" />
+<img src="https://my.callofduty.com/cdn/app/icons/cw/modes/mp_sas.png" width="150" alt="CW mode sticks and stones" /> <img src="https://my.callofduty.com/cdn/app/icons/cw/modes/mp_tdm.png" width="150" alt="CW mode tdm" /> <img src="https://my.callofduty.com/cdn/app/icons/vg/modes/mp_dom.png" width="150" alt="VG mode ffa" /> <img src="https://my.callofduty.com/cdn/app/icons/mw/modes/mp_ctf.png" width="150" alt="MW mode ctf" /> <img src="https://my.callofduty.com/cdn/app/icons/mw/modes/mp_tdm.png" width="150" alt="MW mode tdm" />
 
 
 ## Pegi
@@ -262,11 +236,7 @@ https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-18.jpg
 ```
 
 
-<img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-3.jpg" width="75" alt="pegi 3" />
-<img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-7.jpg" width="75" alt="pegi 7" />
-<img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-12.jpg" width="75" alt="pegi 12" />
-<img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-16.jpg" width="75" alt="pegi 16" />
-<img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-18.jpg" width="75" alt="pegi 18" />
+<img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-3.jpg" width="75" alt="pegi 3" /> <img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-7.jpg" width="75" alt="pegi 7" /> <img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-12.jpg" width="75" alt="pegi 12" /> <img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-16.jpg" width="75" alt="pegi 16" /> <img src="https://imgs.callofduty.com/content/dam/atvi/global/ratings/pegi/pegi-18.jpg" width="75" alt="pegi 18" />
 
 
 ## Random URIs
