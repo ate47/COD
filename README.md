@@ -2,6 +2,8 @@
 
 Tool to use the Call of Duty API
 
+You can find an API description in the [doc directory](doc/README.md).
+
 **Table of contents**
 
 - [Basic usage](#basic-usage)
