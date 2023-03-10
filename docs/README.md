@@ -7,6 +7,7 @@ Welcome to the COD API wiki! This is an unofficial API URI list.
 - [API](apicall.md)
 - [Maps](maps.md)
 - [CDN and items](cdn.md)
+- [API Connection](connect.md)
 - [Cod points](cp.md)
 - [Profile information](profile_info.md)
 - [Profile stats](profile_stats.md)
